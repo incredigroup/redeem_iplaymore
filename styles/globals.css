@@ -62,6 +62,11 @@ body {
   z-index: 999;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px rgb(25, 24, 23) inset;
+  -webkit-text-fill-color: #CBCBCB !important;
+}
+
 @layer base{
   body {
     @apply md:bg-mainbg bg-cover bg-no-repeat overflow-y-scroll;
