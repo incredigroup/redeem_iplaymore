@@ -109,9 +109,7 @@ const Register = ( {route } ) => {
                 </div>
                 <div>
                     <p className="hidden md:block md:text-sm pt-2 pb-3 lg:text-[12px] text-[#53504d] font-medium ">By registering, you agree to our <span className="text-sun">Terms of Use</span> and <span  className="text-sun">Privacy Policy</span></p>
-
                     <button className="bg-sun rounded-md px-11 py-3 text-[12px] text-gray-900 font-bold">Register</button>
-
                     <p className="pt-4 mb-3 text-[14px] text-[#53504d] font-medium ">Already have an account?<span className="text-sun"><a href="#"> Login</a></span></p>
                 </div>
                 </form>

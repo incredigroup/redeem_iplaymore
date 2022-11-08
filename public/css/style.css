@@ -372,7 +372,7 @@ h6 {
 .edrea_tm_header .menu ul li:last-child {
   border-radius: 4px;
   border: 2px solid #FFBD00;
-  padding: 2px 15px;
+  padding: 5px 25px;
 }
 .edrea_tm_header .menu ul li.active {
   color: #FFBD00
