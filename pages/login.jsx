@@ -53,7 +53,7 @@ const Register = ( {route } ) => {
             <div className="flex md:flex-row" >
                 {/* width css issues */}
                 <div className="flex-[0.5] md:flex-[0.5] ">
-                    <h1 className="h1-text-responsive tracking-wide font-extrabold pt-10">WELCOME BACK</h1>
+                    <h1 className="h1-text-responsive">WELCOME BACK</h1>
                     <p className="descri-text">Get in, aquire more gears and devices, redeem codes and get ready to play!
                     </p>
                 </div>
