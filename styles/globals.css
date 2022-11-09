@@ -13,7 +13,7 @@
   }
 
   .h1-text-responsive {
-    @apply text-2xl xs:text-4xl md:text-2xl lg:text-3xl text-sun;
+    @apply text-2xl xs:text-4xl md:text-2xl lg:text-3xl text-sun tracking-wide font-extrabold pt-10;
   }
 
   .redi-text {
@@ -43,6 +43,9 @@
   .error-icon {
     @apply text-[#EA1838] absolute top-[5px] left-[86%] xs:left-[90%] md:left-[94%];
   }
+  .filled-success-help {
+    @apply mt-0 pl-2 text-xs  text-red-900 ;
+  }
 }
 
 body {
@@ -60,6 +63,11 @@ body {
 .edrea_tm_mobile_menu,
 .edrea_tm_settings {
   z-index: 999;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px rgb(25, 24, 23) inset;
+  -webkit-text-fill-color: #CBCBCB !important;
 }
 
 @layer base{

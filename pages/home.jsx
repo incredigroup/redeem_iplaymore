@@ -1,4 +1,4 @@
-import { useContext , useEffect} from "react";
+import { useContext , useEffect, Fragment} from "react";
 import { context } from "@/src/hooks/context";
 import AnimatedText from "@/src/components/AnimatedText";
 import State from "@/src/hooks/context";
@@ -13,18 +13,18 @@ const Home = ({ activeWithBtn, route }) => {
   const { changeNav } = navContext;
 
   return (
-    <div className="edrea_tm_section animated" id="home">
-      <div className="section_inner">
-        <div className="edrea_tm_home">
-          <h3 className="name">
-            <span className="coloring">{homeData.lastName}</span>
-          </h3>
-          <h3 className="job">
-            <AnimatedText />
-          </h3>
+    <Fragment >
+        <div className="flex md:flex-row" >
+            <div className="flex-[0.5] md:flex-[0.5]">
+                <h1 className="h1-text-responsive">Home</h1>
+                <p className="descri-text">Welcome to Iplaymore about Thunder Game <br className="hidden xl:block"/>early and get ready to play!
+                </p>
+            </div>
+            <div className="flex-[0.4] md:flex-[0.4] pt-12 ">
+              
+            </div>
         </div>
-      </div>
-    </div>
+    </Fragment>
   );
 };
 export default Home;
