@@ -3,7 +3,7 @@ import { context } from "../context/context";
 import CheckEmail from "./popup/CheckEmail";
 
 import Web3 from "web3";
-
+ 
 const Register = ( {route } ) => {
     const navContext = useContext(context);
     const {changeNav, logStatus, account, extensionState} = navContext;
