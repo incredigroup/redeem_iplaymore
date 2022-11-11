@@ -59,44 +59,44 @@ const Register = ( {route } ) => {
             <div className="flex-[0.4] md:flex-[0.4] pt-12 ">
                 <form action="" className="space-y-2.5">
                     <div className="m-bg-color">
-                        <div class="relative ">
-                            <input type="text" id="username"  class="form-input peer " placeholder=" " /> 
+                        <div className="relative ">
+                            <input type="text" id="username"  className="form-input peer " placeholder=" " /> 
                             <span><ErrorIcon className="text-red-900 absolute top-4 left-[95%]"/></span>
-                            <label htmlFor="username" class="chasing-text">Username</label>
+                            <label htmlFor="username" className="chasing-text">Username</label>
                         </div>
-                        <p class="filled-success-help">Username already exists</p>
+                        <p className="filled-success-help">Username already exists</p>
                     </div>
                     <div className="m-bg-color">
-                        <div class="relative ">
-                            <input type="email" id="email"  class="form-input peer " placeholder=" " /> 
+                        <div className="relative ">
+                            <input type="email" id="email"  className="form-input peer " placeholder=" " /> 
                             <span><ErrorIcon className="text-red-900 absolute top-4 left-[95%]"/></span>
-                            <label htmlFor="email" class="chasing-text">Email</label>
+                            <label htmlFor="email" className="chasing-text">Email</label>
                         </div>
-                        <p class="filled-success-help">Invalid Email Format</p>
+                        <p className="filled-success-help">Invalid Email Format</p>
                     </div>
                     <div className="m-bg-color">
-                        <div class="relative ">
-                            <input type="text" id="metamask"  class="form-input peer" placeholder=" " /> 
+                        <div className="relative ">
+                            <input type="text" id="metamask"  className="form-input peer" placeholder=" " /> 
                             <span><ErrorIcon className="text-red-900 absolute top-4 left-[95%]"/></span>
-                            <label htmlFor="metamask" class="chasing-text">MetaMask Address</label>
+                            <label htmlFor="metamask" className="chasing-text">MetaMask Address</label>
                         </div>
-                        <p class="filled-success-help">Not Connection with MetaMask</p>
+                        <p className="filled-success-help">Not Connection with MetaMask</p>
                     </div>
                     <div className="m-bg-color">
-                        <div class="relative ">
-                            <input type="password" id="password"  class="form-input peer " placeholder=" " /> 
+                        <div className="relative ">
+                            <input type="password" id="password"  className="form-input peer " placeholder=" " /> 
                             <span><VisibilityIcon className="text-[#7a7773] absolute top-4 left-[95%]"/><ErrorIcon className="text-red-900 absolute top-4 left-[84%] xs:left-[87%] md:left-[86%]"/></span>
-                            <label htmlFor="password" class="chasing-text">Password</label>
+                            <label htmlFor="password" className="chasing-text">Password</label>
                         </div>
-                        <p class="filled-success-help">Invalid Password Format</p>
+                        <p className="filled-success-help">Invalid Password Format</p>
                     </div>
                     <div className="m-bg-color">
-                        <div class="relative ">
-                            <input type="password" id="confirm_password"  class="form-input peer " placeholder=" " /> 
+                        <div className="relative ">
+                            <input type="password" id="confirm_password"  className="form-input peer " placeholder=" " /> 
                             <span><VisibilityOffIcon className="text-[#7a7773] absolute top-4 left-[95%]"/><ErrorIcon className="text-red-900 absolute top-4 left-[84%] xs:left-[87%]  md:left-[86%]"/></span>
-                            <label htmlFor="confirm_password" class="chasing-text">Confirm Password</label>
+                            <label htmlFor="confirm_password" className="chasing-text">Confirm Password</label>
                         </div>
-                        <p class="filled-success-help">Password does not match</p>
+                        <p className="filled-success-help">Password does not match</p>
                     </div>
                     <div>
                         <p className="hidden md:block md:text-sm pt-2 pb-3 lg:text-[12px] text-[#53504d] font-medium ">By registering, you agree to our <span className="text-sun">Terms of Use</span> and <span  className="text-sun">Privacy Policy</span></p>
