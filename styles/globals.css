@@ -75,4 +75,7 @@ input:-webkit-autofill {
     @apply md:bg-mainbg bg-cover bg-no-repeat overflow-y-scroll;
     /* @apply md:bg-mainbg sm:bg-cover bg-mobilebg bg-no-repeat sm:bg-[length:100%_100%] overflow-y-scroll bg-cover ; */
   }
+  body {
+    /* @apply md:bg-mobg bg-cover bg-no-repeat overflow-y-scroll; */
+  }
 }

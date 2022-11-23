@@ -25,7 +25,7 @@ module.exports = {
 
       },
       backgroundImage: {
-        'mobilebg': "url(../public/img/mobile_bg.png')",
+        'mobg': "url(../public/img/mobile.png')",
         'mainbg': "url('../public/img/background.png')",
       }
     },
