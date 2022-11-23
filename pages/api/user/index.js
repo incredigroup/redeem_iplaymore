@@ -14,25 +14,26 @@ export default async function handler(
 
     case 'POST':
       // try {
-        let { name, email, wallet, route } = body
-        const exsitingUser = await User.find({
-          $or: [
-            {wallet: wallet},
-            {email: email}
-          ]
-        })
-        // const exsitingUser = checkUserByWallet(dbConnect, wallet);
-        console.log(exsitingUser);
-        if(_.isEmpty(exsitingUser)) {
+        let { email, password } = body;
+        console.log(body);
+        // const exsitingUser = await User.find({
+        //   $or: [
+        //     {wallet: wallet},
+        //     {email: email}
+        //   ]
+        // })
+        // // const exsitingUser = checkUserByWallet(dbConnect, wallet);
+        // console.log(exsitingUser);
+        // if(_.isEmpty(exsitingUser)) {
           
-          name = startCase(name)
-          const created_at = new Date()
-          const user = await User.create({wallet,name, email, route, created_at});
-          return res.status(200).json({ success: true, message: 'Success', user: user});
-        } else {
-          console.log("not user");
-          return res.status(201).json({ success: true, message: 'Already Registered User', user: exsitingUser });
-        }
+        //   name = startCase(name)
+        //   const created_at = new Date()
+        //   const user = await User.create({wallet,name, email, route, created_at});
+        //   return res.status(200).json({ success: true, message: 'Success', user: user});
+        // } else {
+        //   console.log("not user");
+        //   return res.status(201).json({ success: true, message: 'Already Registered User', user: exsitingUser });
+        // }
       // } catch (error) {
       //   console.log(error.message)
       //   res.status(400).json({ success: false, message: error.message });
