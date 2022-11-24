@@ -1,7 +1,7 @@
 import passport from 'passport';
 import bcrypt from 'bcryptjs';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { findUserById, findUserByEmail } from '@/db/index';
+import { findUserById, findUserByEmail } from '@/models/index';
 
 passport.serializeUser((user, done) => {
   done(null, user._id);

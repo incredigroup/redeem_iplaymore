@@ -34,7 +34,7 @@ const Register = ( { route } ) => {
         if (loginData.email.length === 0 || loginData.password.length === 0) {
             setError({...error, flag: true, message:"Please Fill Required Fields"});
         } else {
-            const res = await fetch('/api/user', {
+            const res = await fetch('/api/auth', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData),

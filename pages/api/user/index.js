@@ -1,7 +1,7 @@
 import _, { get, startCase, toLower, some } from 'lodash';
 
 import dbConnect from '@/utils/dbConnect';
-import User, { checkUserByWallet } from '@/models/User';
+import User, { checkUserByWallet } from '@/models/user';
 
 export default async function handler(
   req, 
