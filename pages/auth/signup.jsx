@@ -9,6 +9,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
+import { TurnedIn } from "@mui/icons-material";
 
 const Register = ( {route } ) => {
     const navContext = useContext(context);
@@ -18,11 +19,8 @@ const Register = ( {route } ) => {
     const walletRef = useRef();
     const passwordRef = useRef();
     const repasswordRef = useRef();
-    // const {changeNav, logStatus, account, extensionState} = navContext;
-    // const web3 = new Web3(Web3.givenProvider || "http://localhost:3000");
-    const [errorMessage, setMessage] = useState('');
-    const [checkType, setType] = useState('email');
-    const [popup, setPopup] = useState(false);
+    const {wallet, storeWallet} = navContext;
+    const [error, setError] = useState({flag: "", message: ""});
 
     // useEffect(() => {
     //     if(user) Router.replace('/');
@@ -36,31 +34,50 @@ const Register = ( {route } ) => {
         if (window.ethereum) {
           const provider = new ethers.providers.Web3Provider(window.ethereum);
           var signer = provider.getSigner();
-          // setSanctionsSmartContract(SanctionsContract.connect(signer));
           window.ethereum
           .request({ method: "eth_requestAccounts" })
           .then((res) => accountChangeHandler(res[0]));
         } else {
-          // alert("install metamask extension!!");
-          storeAccount({account:'', extensionState: false})
+          storeWallet({wallet: ''})
         }
     };
 
     const accountChangeHandler = (walletAddress) => {
-        storeAccount({account:walletAddress, extensionState: true})
-        setMailData({ ...mailData, wallet: walletAddress});
+        walletRef.current.value = walletAddress;
+        // storeWallet({wallet: walletAddress});
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         if(passwordRef.current.value !== repasswordRef.current.value) {
-            setError(...error, )
+            setError({...error, flag: true, message: "Passwords do not match!"});
+            return;
+        } else {
+            const formData = new FormData();
+            formData.append('name', userRef.current.value);
+            formData.append('email', emailRef.current.value);
+            formData.append('wallet', walletRef.current.value);
+            formData.append('password', passwordRef.current.value);
+            const res = await res('/api/auth', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            });
+            if (res.status === 201) {
+                // setLoading(false);
+                // setSuccess(true);
+                await delay(6000);
+                alert("aa");
+          
+                const userObj = await res.json();
+                // mutate(userObj);
+                // setSuccess(false);
+            } else {
+                setError({...error, flag: true, message: await res.text()})
+                // setLoading(false);
+            }
         }
-        const formData = new FormData();
-        formData.append('name', userRef.current.value);
-        formData.append('email', emailRef.current.value);
-        formData.append('wallet', walletRef.current.value);
-        formData.append('password', passwordRef.current.value);
     }
 
     return (
@@ -73,6 +90,12 @@ const Register = ( {route } ) => {
                 </p>
             </div>
             <div className="flex-[0.4] md:flex-[0.4] pt-12 ">
+                {error.flag? 
+                    <div className="m-bg-color rounded-md px-2 py-2 relative mb-5 ">
+                        <p className="error-message">{error.message}</p>
+                        <span><ErrorIcon className="error-icon"/></span>
+                    </div>:''
+                }
                 <form action="" className="space-y-2.5">
                     <div className="m-bg-color">
                         <div className="relative ">
@@ -155,7 +178,41 @@ const Register = ( {route } ) => {
                 
             </div>
         </div>
+        {/* <Loading status={loading} /> */}
+        {/* <Success status={success} /> */}
     </Fragment>
     );
 };
+
+
+function Loading({ status }) {
+    if (!status) return <></>;
+    
+    return (
+      <>
+        <div className="fixed inset-0 z-50 flex items-center justify-center"><i className="text-6xl fa fa-spin fa-spinner"></i></div>
+        <div className="fixed inset-0 z-40 bg-black opacity-40"></div>
+      </>
+    )
+  }
+  
+  function Success({ status }) {
+    if (!status) return <></>;
+    
+    return (
+      <>
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="">
+            <div className="flex justify-center animate-bounce">
+              <img src="esportsref-logo-v3.png" width={135} alt="logo" />
+            </div>
+            <h2 className="mt-5 mb-4 text-3xl font-semibold text-center">Sign up Success !</h2>
+            <p className="text-xl text-center">Thanks, your information will be reviewed by a member of our team, and you will be approved shortly.</p>
+          </div>
+        </div>
+        <div className="fixed inset-0 z-40 bg-black opacity-90"></div>
+      </>
+    )
+  }
+
 export default Register;

@@ -26,8 +26,8 @@ const reducer = (state, action) => {
     case type.ACCOUNT:
       return {
         ...state,
-        account: action.payload.account,
-        extensionState: action.payload.extensionState,
+        wallet: action.payload.wallet,
+        // extensionState: action.payload.extensionState,
     };
     case type.COLOR:
       return {
@@ -53,7 +53,7 @@ const state = (props) => {
     extensionState: false,
     username: "",
     logined: false,
-    account: "",
+    wallet: "",
   };
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -72,7 +72,7 @@ const state = (props) => {
     });
   }
 
-  const storeAccount = (value) => {
+  const storeWallet = (value) => {
     dispatch({
       type: type.ACCOUNT,
       payload: value,
@@ -128,7 +128,7 @@ const state = (props) => {
         ...state,
         changeNav: changeNav,
         logStatus: logStatus,
-        storeAccount: storeAccount,
+        storeWallet: storeWallet,
         colorChange: colorChange,
         getColor: getColor,
         getMagicCursor: getMagicCursor,
