@@ -1,6 +1,18 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/Register": "pages/Register.html",
+  "/api/auth": "pages/api/auth.js",
+  "/api/user": "pages/api/user.js",
+  "/auth/forgot": "pages/auth/forgot.html",
+  "/auth/signup": "pages/auth/signup.html",
+  "/game": "pages/game.html",
+  "/home": "pages/home.html",
+  "/login": "pages/login.html",
+  "/marketplace": "pages/marketplace.html",
+  "/redeemcode": "pages/redeemcode.html",
+  "/videos": "pages/videos.html",
+  "/": "pages/index.js",
   "/_document": "pages/_document.js",
-  "/game": "pages/game.js"
+  "/404": "pages/404.html"
 }

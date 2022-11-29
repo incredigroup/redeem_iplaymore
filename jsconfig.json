@@ -4,6 +4,7 @@
     "paths": {
       "@/middlewares/*": ["middlewares/*"],
       "@/utils/*": ["utils/*"],
+      "@/lib/*": ["lib/*"],
       "@/models/*": ["models/*"],
       "@/src/*": ["src/*"],
     }
