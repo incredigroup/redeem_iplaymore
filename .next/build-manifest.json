@@ -25,11 +25,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/auth/forgot": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/auth/forgot.js"
-    ],
     "/auth/signup": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -40,25 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/game.js"
     ],
-    "/login": [
+    "/home": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/login.js"
-    ],
-    "/marketplace": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/marketplace.js"
-    ],
-    "/redeemcode": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/redeemcode.js"
-    ],
-    "/videos": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/videos.js"
+      "static/chunks/pages/home.js"
     ]
   },
   "ampFirstPages": []
